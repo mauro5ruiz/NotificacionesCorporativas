@@ -1,9 +1,12 @@
+using Connection.Concreto;
+using Connection.Extracto;
 using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<INotificacionesCorporativas, DBNotificacionesCorporativas>();
 
 var app = builder.Build();
 

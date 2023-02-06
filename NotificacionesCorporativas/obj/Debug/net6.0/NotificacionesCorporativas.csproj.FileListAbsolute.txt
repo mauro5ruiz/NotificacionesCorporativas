@@ -1753,3 +1753,8 @@ C:\Users\MAURO\source\Repos\NotificacionesCorporativas -extras\NotificacionesCor
 C:\Users\MAURO\source\Repos\NotificacionesCorporativas -extras\NotificacionesCorporativas\obj\Debug\net6.0\NotificacionesCorporativas.pdb
 C:\Users\MAURO\source\Repos\NotificacionesCorporativas -extras\NotificacionesCorporativas\obj\Debug\net6.0\NotificacionesCorporativas.genruntimeconfig.cache
 C:\Users\MAURO\source\Repos\NotificacionesCorporativas -extras\NotificacionesCorporativas\obj\Debug\net6.0\ref\NotificacionesCorporativas.dll
+C:\Users\MAURO\source\Repos\NotificacionesCorporativas -extras\NotificacionesCorporativas\bin\Debug\net6.0\Connection.deps.json
+C:\Users\MAURO\source\Repos\NotificacionesCorporativas -extras\NotificacionesCorporativas\bin\Debug\net6.0\Connection.runtimeconfig.json
+C:\Users\MAURO\source\Repos\NotificacionesCorporativas -extras\NotificacionesCorporativas\bin\Debug\net6.0\Connection.exe
+C:\Users\MAURO\source\Repos\NotificacionesCorporativas -extras\NotificacionesCorporativas\bin\Debug\net6.0\Connection.dll
+C:\Users\MAURO\source\Repos\NotificacionesCorporativas -extras\NotificacionesCorporativas\bin\Debug\net6.0\Connection.pdb

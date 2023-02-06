@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "BfyLhiAc+sJsgKfHEEHJdxzdMC1ICfy00M11k7Ylqzo=",
+  "Hash": "Orfkl0c3S4xxIChMj8Bic1lV6jXNAzlBM5bN33ln8oo=",
   "Source": "NotificacionesCorporativas",
   "BasePath": "_content/NotificacionesCorporativas",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\MAURO\\source\\Repos\\NotificacionesCorporativas -extras\\Connection\\Connection.csproj",
+      "Version": 2,
+      "Source": "Connection",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
   "DiscoveryPatterns": [],
   "Assets": [
     {
