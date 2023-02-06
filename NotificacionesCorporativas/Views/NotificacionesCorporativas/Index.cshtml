@@ -1,0 +1,165 @@
+﻿@model NotificacionesCorporativas.Models.NotificacionesCorporativasViewModel
+<link rel="stylesheet" href="/content/css/notificacionesCorporativas.css" />
+@{
+    ViewData["Title"] = "Notificaciones Corporativas";
+}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link href="https//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" />
+<link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="module-title">
+    <img src="/Content/images/icono-campana-notificacion-3d-aislado_169241-5743.webp" />
+    <h1>
+        Notificaciones de Lenox
+    </h1>
+    <a @*href="/NotificacionesCorporativas/NuevaNotificacionCorporativa" *@onclick="javascript:AgregarNotificacionCorporativa(0)" id="btnAgregar">AGREGAR</a>
+
+</div>
+
+<div class="main_section">
+    <table id="NotCorpDatatable" class="table" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdNotificacionCorportaiva)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Notificacion)
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Notificaciones)
+            {
+                int id = item.Id;
+                int idItem = item.Id;
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Asunto)
+                    </td>
+                    <td>
+                        <a href="#" id="btnAgregarNot" onclick="javascript:ModificarNotificacionCorporativa(@item.Id,'@item.Asunto')" title='Modificar'><i class="material-icons md-18">edit</i></a>
+                    </td>
+                    <td>
+                        <a href="#" id="btnBorrar" onclick="javascript:EliminarNotificacionCorporativa(@item.Id)" title='Eliminar'><i class="material-icons md-18">close</i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<div class="modal fade" tabindex="-1" id="modalNuevaNotCorp" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="titleModal">Nueva Notificación Corporativa</h4>
+                <button type="button" class="close" aria-label="Close" onclick="javascript: CerrarModal()"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div id="divNuevaNotCorp" class="modal-body">
+                <label>Descripción</label>
+                <br />
+                <input id="txtNotificacion" type="text" autocomplete="off"/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="javascript: CerrarModal()">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="javascript: GuardarNotificacionCorporativa()">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalagregarMasNotificaciones" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="titleModal">Nueva Notificación Corporativa</h4>
+                <button type="button" class="close" aria-label="Close" onclick="javascript: CerrarModal()"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div id="divNuevaNotCorp" class="modal-body">
+                <label>Descripción</label>
+                <br />
+                <input id="txtNotificacion" type="text" autocomplete="off" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="javascript: CerrarModal()">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="javascript: GuardarNotificacionCorporativa()">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-danger fade" id="modal-danger-delete-notificacionCorp">
+    <div class="modal-dialog" id="moda-dialog-error">
+        <div class="modal-content" id="contenido-error">
+            <div class="modal-header">
+                <h4 class="modal-title" id="titleModal">¿Desea borrar la notificación?</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="javascript: CerrarModalError()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body-error">
+                <p class="tituloModal">La eliminación no se puede deshacer. ¿Desea Continuar?</p>
+            </div>
+            <div class="modal-footer-error">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="javascript: CerrarModalError()">Cancelar</button>
+                <button type="button" class="btn btn-danger" onclick="javascript:OnSuccessEliminarNotificacionCorp()" data-dismiss="modal">Borrar Notificación</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<div class="modal modal-danger fade" id="modal-danger-errorr">
+    <div class="modal-dialog-error" role="document">
+        <div class="modal-content-error">
+            <label>Debe ingresar una notificación con un formato mayor a 8 caracteres</label>
+        </div>
+    </div>
+</div>
+<div class="modal modal-danger fade" id="modal-danger-error">
+    <div class="modal-dialog" id="moda-dialog-error">
+        <div class="modal-content" id="contenido-error">
+            <div class="modal-header">
+                <h6>ERROR</h6>
+            </div>
+            
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade" id="modal-procesar-respuesta" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body inline-block" style="background-color: #ed4747">
+                <label class="modal-title" id="lblError" style="font-family: sans-serif; color: white">El dni ya existe para otro empleado o empleado duplicado.</label>
+            </div>
+
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="/Content/js/jNotificacionesCorporativas.js"></script>

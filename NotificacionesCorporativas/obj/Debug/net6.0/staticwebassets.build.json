@@ -1,0 +1,46 @@
+{
+  "Version": 1,
+  "Hash": "BfyLhiAc+sJsgKfHEEHJdxzdMC1ICfy00M11k7Ylqzo=",
+  "Source": "NotificacionesCorporativas",
+  "BasePath": "_content/NotificacionesCorporativas",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\MAURO\\source\\Repos\\NotificacionesCorporativas -extras\\NotificacionesCorporativas\\obj\\Debug\\net6.0\\scopedcss\\bundle\\NotificacionesCorporativas.styles.css",
+      "SourceId": "NotificacionesCorporativas",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\MAURO\\source\\Repos\\NotificacionesCorporativas -extras\\NotificacionesCorporativas\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/NotificacionesCorporativas",
+      "RelativePath": "NotificacionesCorporativas.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\MAURO\\source\\Repos\\NotificacionesCorporativas -extras\\NotificacionesCorporativas\\obj\\Debug\\net6.0\\scopedcss\\bundle\\NotificacionesCorporativas.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\MAURO\\source\\Repos\\NotificacionesCorporativas -extras\\NotificacionesCorporativas\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NotificacionesCorporativas.bundle.scp.css",
+      "SourceId": "NotificacionesCorporativas",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\MAURO\\source\\Repos\\NotificacionesCorporativas -extras\\NotificacionesCorporativas\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/NotificacionesCorporativas",
+      "RelativePath": "NotificacionesCorporativas.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\MAURO\\source\\Repos\\NotificacionesCorporativas -extras\\NotificacionesCorporativas\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NotificacionesCorporativas.bundle.scp.css"
+    }
+  ]
+}
